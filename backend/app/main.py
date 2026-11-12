@@ -186,9 +186,22 @@ app.state.limiter = limiter
 app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 # Configure CORS — scope to known origins only (wildcard + credentials is invalid per spec)
+cors_origins = list(settings.CORS_ORIGINS)
+if settings.FRONTEND_URL:
+    frontend_origin = settings.FRONTEND_URL.strip().rstrip("/")
+    if frontend_origin and frontend_origin not in cors_origins:
+        cors_origins.append(frontend_origin)
+
+allow_origin_regex = (
+    r"^https://[a-zA-Z0-9-]+\.onrender\.com$"
+    if settings.ENVIRONMENT.lower() == "production"
+    else None
+)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=settings.CORS_ORIGINS,
+    allow_origins=cors_origins,
+    allow_origin_regex=allow_origin_regex,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

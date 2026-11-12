@@ -22,6 +22,7 @@ class Settings(BaseSettings):
         "http://localhost:5173",
         "http://127.0.0.1:5173",
     ]
+    FRONTEND_URL: str = ""
 
     MODEL_DIR: str = os.path.join(
         os.path.dirname(__file__), "ml", "model_storage"
