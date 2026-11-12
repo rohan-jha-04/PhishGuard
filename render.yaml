@@ -42,7 +42,7 @@ services:
         fromService:
           type: web
           name: phishguard-api
-          property: url
+          envVarKey: RENDER_EXTERNAL_URL
     routes:
       - type: rewrite
         source: /*
