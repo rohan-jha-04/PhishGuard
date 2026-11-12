@@ -1,0 +1,169 @@
+{
+  "generated_at": "2026-11-12T11:54:36.055738+00:00",
+  "dataset": {
+    "name": "PhishGuard Synthetic URL Benchmark",
+    "license": "Not separately licensed",
+    "citation": "No external dataset records are directly imported. The benchmark is generated using project-defined URL patterns.",
+    "total_samples": 1801,
+    "train_samples": 1440,
+    "test_samples": 361,
+    "benign_count": 877,
+    "phishing_count": 924
+  },
+  "selected_model": "Random Forest Classifier",
+  "models": {
+    "random_forest": {
+      "name": "Random Forest Classifier",
+      "hyperparameters": {
+        "n_estimators": 100,
+        "max_depth": 14,
+        "criterion": "gini",
+        "min_samples_split": 4
+      },
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "roc_auc": 1.0,
+        "confusion_matrix": [
+          [
+            176,
+            0
+          ],
+          [
+            0,
+            185
+          ]
+        ]
+      }
+    },
+    "logistic_regression": {
+      "name": "Logistic Regression (L2 Regularized)",
+      "hyperparameters": {
+        "max_iter": 1000,
+        "C": 1.0,
+        "penalty": "l2"
+      },
+      "metrics": {
+        "accuracy": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1_score": 1.0,
+        "roc_auc": 1.0,
+        "confusion_matrix": [
+          [
+            176,
+            0
+          ],
+          [
+            0,
+            185
+          ]
+        ]
+      }
+    }
+  },
+  "feature_importances": [
+    {
+      "feature": "prefix_suffix_hyphen",
+      "importance": 0.2171,
+      "percentage": 21.71
+    },
+    {
+      "feature": "suspicious_words_count",
+      "importance": 0.1974,
+      "percentage": 19.74
+    },
+    {
+      "feature": "count_hyphens",
+      "importance": 0.1865,
+      "percentage": 18.65
+    },
+    {
+      "feature": "num_query_params",
+      "importance": 0.1182,
+      "percentage": 11.82
+    },
+    {
+      "feature": "shannon_entropy",
+      "importance": 0.0736,
+      "percentage": 7.36
+    },
+    {
+      "feature": "url_length",
+      "importance": 0.0578,
+      "percentage": 5.78
+    },
+    {
+      "feature": "digit_ratio",
+      "importance": 0.0451,
+      "percentage": 4.51
+    },
+    {
+      "feature": "count_digits",
+      "importance": 0.0275,
+      "percentage": 2.75
+    },
+    {
+      "feature": "num_subdomains",
+      "importance": 0.0204,
+      "percentage": 2.04
+    },
+    {
+      "feature": "path_length",
+      "importance": 0.0165,
+      "percentage": 1.65
+    },
+    {
+      "feature": "count_dots",
+      "importance": 0.0121,
+      "percentage": 1.21
+    },
+    {
+      "feature": "having_ip_address",
+      "importance": 0.0103,
+      "percentage": 1.03
+    },
+    {
+      "feature": "count_question",
+      "importance": 0.009,
+      "percentage": 0.9
+    },
+    {
+      "feature": "tld_in_subdomain",
+      "importance": 0.0039,
+      "percentage": 0.39
+    },
+    {
+      "feature": "is_https",
+      "importance": 0.0032,
+      "percentage": 0.32
+    },
+    {
+      "feature": "is_shortened",
+      "importance": 0.0014,
+      "percentage": 0.14
+    },
+    {
+      "feature": "count_at",
+      "importance": 0.0001,
+      "percentage": 0.01
+    },
+    {
+      "feature": "having_at_symbol",
+      "importance": 0.0,
+      "percentage": 0.0
+    },
+    {
+      "feature": "double_slash_redirect",
+      "importance": 0.0,
+      "percentage": 0.0
+    },
+    {
+      "feature": "count_percent",
+      "importance": 0.0,
+      "percentage": 0.0
+    }
+  ]
+}
